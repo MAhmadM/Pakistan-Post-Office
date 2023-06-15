@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Set default font family and size */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add background color to body */
+        body {
+            background-color: #f2f2f2;
+        }
+
+        /* Style the container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #888888;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        /* Style the attribute */
+        .attribute {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Style the value */
+        .value {
+            text-align: right;
+        }
+
+        /* Style the br tag */
+        br {
+            display: none;
+        }
+
+        /* Style the hr tag */
+        hr {
+            border: none;
+            border-top: 1px solid #dddddd;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="attribute">Username:</div>
+        <div class="value">{{username}}</div>
+
+        <hr>
+
+        <div class="attribute">Weight of Parcel:</div>
+        <div class="value">{{weight}}</div>
+
+        <hr>
+
+        <div class="attribute">Cost:</div>
+        <div class="value">{{cost | int}}</div>
+
+        <hr>
+
+        <div class="attribute">Date/Time:</div>
+        <div class="value">{{date}}</div>
+
+        <hr>
+
+        <div class="attribute">ID:</div>
+        <div class="value">{{id}}</div>
+    </div>
+</body>
+</html>

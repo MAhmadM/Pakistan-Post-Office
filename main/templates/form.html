@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bill Entry Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-container input,
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Bill Entry Form</h2>
+    <form method="post" action="/submit">
+      <label for="billID">Bill ID:</label>
+      <input type="text" id="billID" name="billID" required pattern="[0-9]+" title="Please enter numbers only">
+
+      <label for="billType">Bill Type:</label>
+      <select id="billType" name="billType" required>
+        <option value="WASA">WASA</option>
+        <option value="LESCO">LESCO</option>
+        <option value="PTCL">PTCL</option>
+      </select>
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" required min="0">
+
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" name="customerName" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
